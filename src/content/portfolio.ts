@@ -10,30 +10,32 @@ import type { Portfolio } from './types';
  * Logos and screenshots come from `npm run images`, which turns the originals
  * in Logos/ and Screenshots/<App>/ into web copies and looks them up by slug
  * (see scripts/optimize-images.mjs). A project with no screenshots shows no
- * gallery; one with no logo shows its title alone.
+ * gallery; one with no logo shows its title alone. Where third-party images
+ * come from is recorded in ASSET_SOURCES.md.
  */
 export const portfolio: Portfolio = {
   profile: {
     name: 'Sultan Almukhan',
     initials: 'SA',
-    role: 'Senior iOS Developer',
-    experience: '7+ years of commercial experience',
+    role: 'AI-First Senior iOS Engineer',
+    experience: '7+ years across AI, fintech, media, and telecom',
     intro:
-      'I build and maintain production iOS apps in international teams, from product requirements to automated releases. My focus is codebase modernization, app stability and features built with modern iOS technologies.',
+      'I build production iOS applications from architecture to release, with a focus on voice-first AI experiences, Swift modernization, and reliable mobile engineering. I also work across backend APIs, UI/UX, and AI-assisted development workflows.',
     photo: 'sultan-almukhan.jpg',
   },
 
   cv: {
-    file: 'Sultan_Almukhan_iOS_Developer.pdf',
-    downloadName: 'Sultan_Almukhan_iOS_Developer.pdf',
+    file: 'Sultan_Almukhan_iOS_Engineer.pdf',
+    downloadName: 'Sultan_Almukhan_iOS_Engineer.pdf',
   },
 
   contact: {
     intro: "Whether it's a role, a product or a question about my work, I'd be glad to hear from you.",
-    email: 'almukhansultan@gmail.com',
-    linkedin: { href: 'https://www.linkedin.com/in/sultanalmukhan/', label: 'linkedin.com/in/sultanalmukhan' },
-    github: { href: 'https://github.com/sultanalmukhan', label: 'github.com/sultanalmukhan' },
-    whatsapp: { href: 'https://wa.me/4917615485920', label: '+49 176 15485920' },
+    location: 'Based in Europe',
+    email: 's.almukhan.dev@gmail.com',
+    linkedin: { href: 'https://www.linkedin.com/in/salmukhan/', label: 'linkedin.com/in/salmukhan' },
+    github: { href: 'https://github.com/salmukhan', label: 'github.com/salmukhan' },
+    whatsapp: { href: 'https://wa.me/491791567186', label: '+49 179 1567186' },
     appStoreDeveloper: {
       href: 'https://apps.apple.com/us/developer/sultan-almukhan/id1833875345',
       label: 'App Store developer profile',
@@ -55,15 +57,15 @@ export const portfolio: Portfolio = {
   projects: [
     {
       title: 'Professional Projects',
-      intro: 'Apps I worked on at FGS Global, Tele2, DAR, Halyk Bank and Tredo.',
+      intro: 'Apps I worked on at FGS Global, Tele2, Revolut and Appunite.',
       projects: [
         {
           id: 'app-fergus',
           name: 'Fergus',
           subtitle: 'FGS Global',
           description:
-            'A voice-first enterprise AI app used by FGS Global employees across 13 countries. Hands-free voice chat combines on-device speech recognition, AI responses streamed over SSE and server-generated TTS playback.',
-          stack: { label: 'FGS Global stack', items: ['Swift', 'UIKit', 'Swift Testing', 'MVP-C', 'AVFoundation', 'Speech Framework', 'SSE', 'Okta OIDC', 'Next.js'] },
+            'A private enterprise voice-first AI application supporting employees across 13 countries. It combines on-device speech recognition, streamed LLM responses over SSE, and server-generated text-to-speech playback.',
+          stack: { label: 'FGS Global stack', items: ['Swift', 'SwiftUI', 'AVFoundation', 'Speech Framework', 'SSE', 'Next.js'] },
           solo: true,
           logo: logoFor('fergus'),
           screenshots: screenshotsFor('fergus'),
@@ -79,7 +81,7 @@ export const portfolio: Portfolio = {
           name: 'Mitt Tele2',
           subtitle: 'Tele2',
           description:
-            "A telecom superapp bringing mobile plans, account management, media features, and loan services into one experience.",
+            'A telecom app for mobile account management and customer services, with media features such as ringtones and call recording.',
           stack: { label: 'Tele2 stack', items: ['Swift', 'UIKit', 'SwiftUI', 'Swift Testing'] },
           logo: logoFor('mitt-tele2'),
           screenshots: screenshotsFor('mitt-tele2'),
@@ -94,7 +96,7 @@ export const portfolio: Portfolio = {
           name: 'Comviq',
           subtitle: 'Tele2',
           description:
-            "A telecom superapp combining mobile account management, top-ups, media features, and loan services in one place.",
+            'A mobile self-service app for account and subscription management, top-ups, and related telecom services.',
           stack: { label: 'Tele2 stack', items: ['Swift', 'UIKit', 'SwiftUI', 'Swift Testing'] },
           logo: logoFor('comviq'),
           screenshots: screenshotsFor('comviq'),
@@ -105,79 +107,52 @@ export const portfolio: Portfolio = {
           },
         },
         {
-          id: 'app-darlean',
-          name: 'Darlean',
-          subtitle: 'DAR',
+          id: 'app-revolut',
+          name: 'Revolut',
+          subtitle: 'Revolut',
           description:
-            'A business management platform for teams of all sizes, bringing tasks, approvals, timesheets, employee profiles, online meetings and file storage into one app.',
-          stack: { label: 'DAR stack', items: ['Swift', 'UIKit', 'XCTest', 'SPM', 'MVVM-C', 'Fastlane', 'Tuist', 'Swinject'] },
-          logo: logoFor('darlean'),
-          screenshots: screenshotsFor('darlean'),
+            'A digital banking and payments app offering card transfers, P2P payments, bank transfers and transaction history. My work focused on transfer flows and faster repeat payments.',
+          stack: { label: 'Revolut stack', items: ['Swift', 'UIKit', 'MVVM', 'Core Data', 'XCTest', 'Fastlane'] },
+          logo: logoFor('revolut'),
+          screenshots: screenshotsFor('revolut'),
+          screenshotsNote: 'Current App Store screenshots.',
           store: {
             kind: 'link',
-            href: 'https://apps.apple.com/de/app/darlean-eu/id1508293776',
-            ariaLabel: 'Darlean EU on the App Store',
+            href: 'https://apps.apple.com/app/id932493382',
+            ariaLabel: 'Revolut on the App Store',
           },
         },
         {
-          id: 'app-halyk',
-          name: 'Halyk',
-          subtitle: 'Halyk Bank',
+          id: 'app-blocktrade',
+          name: 'Blocktrade',
+          subtitle: 'Appunite',
           description:
-            "Halyk Bank's super app for transfers, payments, loans and deposits, plus shopping with installments, travel and event tickets, and public services.",
-          stack: { label: 'Halyk Bank stack', items: ['Swift', 'UIKit', 'XCTest', 'SnapKit', 'MVVM-C', 'GCD', 'Liveness'] },
-          logo: logoFor('halyk'),
-          screenshots: screenshotsFor('halyk'),
+            'A cryptocurrency exchange for buying and selling digital assets, featuring real-time price updates and trading information. The mobile experience uses WebSockets to keep changing market data responsive.',
+          stack: { label: 'Appunite stack', items: ['Swift', 'Objective-C', 'UIKit', 'WebSockets', 'Core Data'] },
+          logo: logoFor('blocktrade'),
+          screenshots: screenshotsFor('blocktrade'),
+          screenshotsNote: "Mobile product visuals from Appunite's Blocktrade case study.",
           store: {
             kind: 'link',
-            href: 'https://apps.apple.com/us/app/halyk-kazakhstan/id440635615',
-            ariaLabel: 'Halyk on the App Store',
+            label: 'Case study',
+            href: 'https://www.appunite.com/projects/blocktrade',
+            ariaLabel: "Blocktrade case study on Appunite's website",
           },
         },
         {
-          id: 'app-intebix',
-          name: 'Intebix',
-          subtitle: 'Tredo',
+          id: 'app-wire',
+          name: 'Wire',
+          subtitle: 'Appunite',
           description:
-            'A cryptocurrency exchange app for buying, selling and trading assets such as Bitcoin and Ethereum, with deposits and withdrawals through partner banks in Kazakhstan.',
-          stack: { label: 'Tredo stack', items: ['Swift', 'Objective-C', 'UIKit', 'WebSocket'] },
-          solo: true,
-          logo: logoFor('intebix'),
-          screenshots: screenshotsFor('intebix'),
+            'An encrypted messaging and collaboration app for teams, supporting one-to-one and group chats, file sharing, and voice and video calls.',
+          stack: { label: 'Appunite stack', items: ['Swift', 'UIKit'] },
+          logo: logoFor('wire'),
+          screenshots: screenshotsFor('wire'),
+          screenshotsNote: 'Current App Store screenshots.',
           store: {
             kind: 'link',
-            href: 'https://apps.apple.com/kz/app/intebix/id6443622769',
-            ariaLabel: 'Intebix on the App Store',
-          },
-        },
-        {
-          id: 'app-biteeu',
-          name: 'Biteeu',
-          subtitle: 'Tredo',
-          // Placeholder from the design until a one-line product description is supplied.
-          description: 'An iOS application delivered while working at Tredo.',
-          stack: { label: 'Tredo stack', items: ['Swift', 'Objective-C', 'UIKit'] },
-          logo: logoFor('biteeu'),
-          screenshots: screenshotsFor('biteeu'),
-          store: {
-            kind: 'link',
-            href: 'https://biteeu.appstor.io/',
-            ariaLabel: 'Biteeu on the App Store',
-          },
-        },
-        {
-          id: 'app-bcc-business',
-          name: 'BCC Business',
-          subtitle: 'Tredo',
-          description:
-            "Bank CenterCredit's mobile banking app for entrepreneurs and business clients: open accounts, send domestic and international payments, exchange currency and manage business cards.",
-          stack: { label: 'Tredo stack', items: ['Swift', 'Objective-C', 'UIKit'] },
-          logo: logoFor('bcc-business'),
-          screenshots: screenshotsFor('bcc-business'),
-          store: {
-            kind: 'link',
-            href: 'https://apps.apple.com/in/app/bcc-business-2-0/id6733227151',
-            ariaLabel: 'BCC Business 2.0 on the App Store',
+            href: 'https://apps.apple.com/app/id930944768',
+            ariaLabel: 'Wire on the App Store',
           },
         },
       ],
@@ -228,124 +203,96 @@ export const portfolio: Portfolio = {
 
   experience: [
     {
-      start: '2025-09',
+      start: '2025-03',
       company: 'FGS Global',
-      role: 'Senior iOS Developer',
-      companyDescription:
-        "FGS Global is the world's #1 M&A communications advisor, supporting 527 deals worth $1.14T in 2025.",
+      role: 'AI-First Senior iOS Engineer',
+      companyDescription: 'FGS Global is a strategic communications advisory firm.',
       achievements: [
-        'Owned and delivered a voice-first enterprise AI application from concept to release as the sole iOS engineer, taking full responsibility for architecture, implementation, integrations, testing and technical decision-making, built for employees across 13 countries worldwide.',
-        'Collaborated with product leadership and key stakeholders to define requirements, prioritize scope and validate critical product and technical decisions upfront, avoiding major rework and saving an estimated 2–3 months of development.',
-        'Engineered and launched a mobile AI chat agent with hands-free voice interaction, combining on-device speech recognition, AI responses streamed over SSE and server-generated TTS playback, contributing to a 23.7% increase in platform MAU.',
-        'Drove cross-functional delivery across Product, Design, Backend and DevOps teams in multiple countries, while personally building a dedicated Next.js mobile API layer with 20+ endpoints.',
+        'Built and shipped an enterprise voice-first AI application for employees across 13 countries as the sole iOS engineer, owning architecture, implementation, and integrations while delivering the MVP in one month',
+        'Accelerated feature development by ~40% by building AI-assisted workflows for development, debugging, and code review with Claude Code, AI agents, and MCP integrations, with human-in-the-loop approvals',
+        'Engineered a real-time, low-latency LLM voice pipeline combining server-generated TTS via ElevenLabs, streaming LLM responses over SSE, and on-device STT that eliminated third-party transcription costs, saving ~$11K annually',
+        'Expanded into full-stack work, designing UI/UX in Figma and building 30+ endpoints with Next.js that connect the iOS app to backend and AI services, collaborating with cross-functional teams',
       ],
-      technologies: ['Swift', 'UIKit', 'Swift Testing', 'MVP-C', 'AVFoundation', 'Speech Framework', 'SSE', 'Okta OIDC', 'Next.js'],
+      technologies: ['Swift', 'SwiftUI', 'MVVM', 'AVFoundation', 'Speech Framework', 'SSE', 'Next.js', 'LLM', 'Claude Code', 'MCP'],
       apps: [{ name: 'Fergus', projectId: 'app-fergus' }],
     },
     {
-      start: '2023-08',
-      end: '2025-09',
+      start: '2023-02',
+      end: '2025-03',
       company: 'Tele2',
       role: 'Senior iOS Developer',
-      companyDescription:
-        'Tele2 is a leading European telecommunications operator serving 7M+ mobile customers across Sweden and the Baltics.',
+      companyDescription: 'Tele2 is a telecommunications operator serving customers in Sweden and the Baltics.',
       achievements: [
-        'Delivered a Call Recording module with an audio player and time-synced transcription, enabling fast conversation navigation.',
-        'Built a full-featured Ringtones media platform with advanced browsing and system-level ringtone installation.',
-        'Integrated and launched an end-to-end loan application flow with partner banks (forms, document upload, calculations, pre-scoring), which boosted the number of issued loans by 34.6% within two months of release.',
-        "Led modernization of the project's largest module by migrating to Swift 6, replacing XCTest with Swift Testing and refactoring async logic to async/await, raising the crash-free rate from 90.2% to 95.7% while improving performance and maintainability.",
+        'Reduced duplicated UI code by ~35% by architecting a multi-brand design system with 32 reusable components shared across 2 telecom apps',
+        'Led the migration from Swift 5 to Swift 6 strict concurrency (async/await, actors), transitioned from XCTest to Swift Testing, and increased test coverage from 41.7% to 78.1%',
+        'Developed a Ringtones media module with catalog browsing and instant preview, supporting 7K+ activations a month',
+        'Delivered a Call Recording media module, enabling users to review recorded conversations through synchronized audio playback and interactive transcript navigation, supporting 9K+ recording playbacks per month',
       ],
-      technologies: ['Swift', 'UIKit', 'SwiftUI', 'Swift Testing', 'SPM', 'MVP', 'async/await', 'Fastlane', 'Swinject'],
+      technologies: ['Swift', 'UIKit', 'SwiftUI', 'MVP-C', 'AVFoundation', 'SPM', 'Swift Testing', 'Fastlane', 'GitLab CI', 'Firebase', 'Amplitude'],
       apps: [
         { name: 'Mitt Tele2', projectId: 'app-mitt-tele2' },
         { name: 'Comviq', projectId: 'app-comviq' },
       ],
     },
     {
-      start: '2021-08',
-      end: '2023-08',
-      company: 'DAR',
-      role: 'Senior iOS Developer',
-      companyDescription:
-        'DAR is an international technology group developing 10+ digital platforms across enterprise SaaS, education and media sectors.',
+      start: '2021-03',
+      end: '2023-02',
+      company: 'Revolut',
+      role: 'iOS Engineer',
+      companyDescription: 'Revolut is a financial technology company offering banking, payments and money management apps.',
       achievements: [
-        'Designed and introduced advanced meeting creation and editing features, including recurring events and a custom calendar with timeline views inspired by Google Calendar. Increased the App Store rating from 4.4 to 4.6 within one month of release.',
-        'Created a reusable Swift Package with a WYSIWYG editor, centralized environment-based URL configuration across modules, reduced SPM build times from 20 to 4 minutes and improved cold app launch time by 10 seconds.',
+        'Launched Instant Card Transfers for a banking app, letting users initiate a card transfer in under a minute and reaching 50K+ transfers a month',
+        'Reduced repeat transfer time by ~40% with one-tap repeat with pre-filled payment details in transaction history',
+        'Improved P2P and bank transfer flows with clearer recipient selection, simpler confirmation, and earlier input validation',
       ],
-      technologies: ['Swift', 'UIKit', 'XCTest', 'SPM', 'MVVM-C', 'Fastlane', 'Tuist', 'Swinject'],
-      apps: [{ name: 'Darlean', projectId: 'app-darlean' }],
+      technologies: ['Swift', 'UIKit', 'MVVM', 'Flow Coordinator', 'Core Data', 'Feature Flags', 'XCTest', 'Fastlane', 'CI/CD'],
+      apps: [{ name: 'Revolut', projectId: 'app-revolut' }],
     },
     {
-      start: '2020-11',
-      end: '2021-08',
-      company: 'Halyk Bank',
+      start: '2019-01',
+      end: '2021-03',
+      company: 'Appunite',
       role: 'iOS Developer',
-      companyDescription:
-        'Halyk Bank is the largest financial services group in Central Asia with $45B+ in assets and 11M+ active customers.',
+      companyDescription: 'Appunite is a software development company that builds web and mobile products for clients.',
       achievements: [
-        'Redesigned and re-architected the most-used Acquiring module, delivering 15+ scalable and reusable production screens with seamless backend API integration and improving the crash-free user rate from 87.6% to 94.2%.',
-        'Mentored and coached junior iOS developers by conducting weekly training sessions and code reviews, supporting their technical development and effective onboarding.',
+        'Built and launched a crypto exchange app from scratch in 4 months as the sole iOS developer, implementing user registration, identity verification (KYC), and real-time price updates via WebSockets',
+        'Delivered a meeting management module for an enterprise SaaS platform, with recurring meetings and high-performance custom Google Calendar-style timeline views',
       ],
-      technologies: ['Swift', 'UIKit', 'XCTest', 'SnapKit', 'MVVM-C', 'GCD', 'Liveness'],
-      apps: [{ name: 'Halyk', projectId: 'app-halyk' }],
-    },
-    {
-      start: '2018-12',
-      end: '2020-11',
-      company: 'Tredo',
-      role: 'iOS Developer',
-      companyDescription:
-        'Tredo is an IT outsourcing company serving 15+ enterprise clients, including international startups.',
-      achievements: [
-        'Built a crypto app from scratch and released it to the App Store as a solo iOS developer, including user registration, identity verification and real-time price updates via WebSockets.',
-        'Delivered Deposit and Transport Tax features for a banking application, increasing MAU by 6.1% and 3.2% respectively, while improving the reliability of bank transfers and notifications.',
-      ],
-      technologies: ['Swift', 'Objective-C', 'UIKit', 'CocoaPods', 'MVC', 'VIPER', 'GCD', 'WebSocket', 'Combine', 'RxSwift', 'Core Data'],
-      apps: [
-        { name: 'Intebix', projectId: 'app-intebix' },
-        { name: 'Biteeu', projectId: 'app-biteeu' },
-        { name: 'BCC Business', projectId: 'app-bcc-business' },
-      ],
+      technologies: ['Swift', 'Objective-C', 'UIKit', 'MVC', 'MVVM', 'Combine', 'RxSwift', 'WebSockets', 'Core Data', 'CocoaPods', 'XCTest'],
+      // Wire is shown as a project card but not linked here until an individual contribution is confirmed.
+      apps: [{ name: 'Blocktrade', projectId: 'app-blocktrade' }],
     },
   ],
 
   about: {
-    lead: "I'm an iOS developer with 7+ years of commercial experience building and maintaining production iOS apps in international teams. I work across the full cycle, from product requirements to automated releases with high test coverage and detailed analytics, and I've expanded beyond iOS by building and integrating dedicated mobile backend APIs.",
-    body: "I founded a coding school and mentor junior developers through code reviews and regular knowledge-sharing sessions. I'm fluent in English, confident working in multicultural teams, and passionate about building independent iOS products and launching startup projects for the global App Store market.",
+    lead: 'I am an AI-first Senior iOS Engineer with 7+ years of experience building Swift applications across AI, fintech, media, and telecom. My work spans product requirements, mobile architecture, implementation, testing, and automated releases. Beyond iOS, I contribute to backend development and UI/UX design, and integrate AI-assisted workflows into everyday engineering.',
+    body: 'I have mentored junior iOS engineers through code reviews and regular knowledge-sharing sessions, and founded a coding school attended by 100+ students. I enjoy owning features end to end, modernizing existing codebases, and delivering maintainable products with cross-functional teams.',
     expertise: [
       {
-        title: 'iOS development',
-        items: 'Swift, SwiftUI, UIKit, Swift Concurrency, Combine, Core Data, AVFoundation, Speech Framework, Core Animation, Objective-C',
+        title: 'iOS / Mobile',
+        items:
+          'Swift, SwiftUI, UIKit, Xcode, Swift Concurrency (Swift 6, async/await, actors), Combine, Swift Package Manager (SPM), Core Data, AVFoundation, Speech Framework, Apple Pay (PassKit), Keychain, RxSwift, Objective-C',
       },
       {
-        title: 'Architecture, networking and testing',
-        items: 'Clean Architecture, MVVM, VIPER, MVP, SOLID, Swinject, REST, WebSockets, SSE, OAuth 2.0, OIDC, XCTest, Swift Testing',
+        title: 'Architecture, Networking & Testing',
+        items:
+          'MVVM, MVP, Clean Architecture, Design Systems, REST APIs (URLSession), WebSockets, SSE, OAuth 2.0, OIDC, Okta, Unit Testing (XCTest, Swift Testing)',
       },
       {
-        title: 'Delivery and tooling',
-        items: 'Xcode, SPM, Tuist, CocoaPods, Fastlane, CI/CD, App Store Connect, TestFlight, Firebase Crashlytics and Analytics, SwiftLint',
+        title: 'AI, Backend & DevOps',
+        items:
+          'LLM, AI agents, MCP, Claude Code (sub-agents, skills, hooks), STT, TTS, Next.js, TypeScript, Git, CI/CD, Fastlane, TestFlight, App Store Connect, Firebase (Crashlytics, Analytics)',
       },
-      { title: 'Backend and web', items: 'Next.js, Node.js, TypeScript, JavaScript' },
     ],
     education: [
-      {
-        school: 'Suleyman Demirel University',
-        detail: "Master's degree, Computer Science · Faculty of Engineering and Natural Sciences",
-      },
-      {
-        school: 'Suleyman Demirel University',
-        detail: "Bachelor's degree, Information Systems · Faculty of Engineering and Natural Sciences",
-      },
-      {
-        school: 'Kazakh-Turkish Lyceum',
-        detail: "School for gifted children · Member of the school's Mathematical Olympiad team",
-      },
+      { school: 'Suleyman Demirel University', detail: "Master's Degree in Computer Science" },
+      { school: 'Suleyman Demirel University', detail: "Bachelor's Degree in Information Systems" },
     ],
     languages: [
-      { name: 'Kazakh', level: 'C2, Proficient' },
-      { name: 'English', level: 'C1, Proficient' },
-      { name: 'Russian', level: 'C2, Proficient' },
-      { name: 'Turkish', level: 'B2, Upper-Intermediate' },
+      { name: 'English', level: 'C1 (Advanced)' },
+      { name: 'Turkish', level: 'C1 (Advanced)' },
+      { name: 'Kazakh', level: 'Native' },
+      { name: 'Russian', level: 'C1 (Advanced)' },
     ],
   },
 };

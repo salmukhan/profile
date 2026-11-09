@@ -1,5 +1,6 @@
 import { portfolio } from '../content/portfolio';
 import { asset } from '../lib/asset';
+import { externalLink } from '../lib/links';
 import { CvLink } from './CvLink';
 import { ArrowDownIcon } from './Icons';
 import './Hero.css';
@@ -35,10 +36,10 @@ export function Hero() {
               <span className="only-desktop">{contact.email}</span>
               <span className="only-mobile">Email</span>
             </a>
-            <a className="text-link hero__link" href={contact.linkedin.href}>
+            <a className="text-link hero__link" href={contact.linkedin.href} {...externalLink}>
               LinkedIn
             </a>
-            <a className="text-link hero__link" href={contact.whatsapp.href}>
+            <a className="text-link hero__link" href={contact.whatsapp.href} {...externalLink}>
               WhatsApp
             </a>
           </div>

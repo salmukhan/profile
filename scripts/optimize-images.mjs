@@ -23,13 +23,22 @@ const SCREENSHOT_FOLDERS = {
   Fergus: 'fergus',
   Tele2: 'mitt-tele2',
   Comviq: 'comviq',
-  Darlean: 'darlean',
-  Halyk: 'halyk',
-  Intebix: 'intebix',
-  Biteeu: 'biteeu',
-  'BCC Business': 'bcc-business',
+  Revolut: 'revolut',
+  Blocktrade: 'blocktrade',
+  Wire: 'wire',
   StepsHero: 'stepshero',
   CapsLab: 'capslab',
+};
+
+/** Folders of projects no longer on the site. Their originals are kept but not published. */
+const RETIRED_SCREENSHOT_FOLDERS = new Set(['Darlean', 'Halyk', 'Intebix', 'Biteeu', 'BCC Business']);
+
+/** Originals kept out of the site, with the reason. */
+const EXCLUDED_SCREENSHOTS = {
+  Fergus: {
+    '3.png': 'mock reply with offensive content about a named person',
+    '4.png': 'start of the same mock leadership-meeting conversation',
+  },
 };
 
 /** Source logo file → app slug used in public/logos/<slug>.png. */
@@ -37,11 +46,9 @@ const LOGO_FILES = {
   'fergus_icon.png': 'fergus',
   'tele2_logo.png': 'mitt-tele2',
   'comviq_logo.png': 'comviq',
-  'darlean_logo.png': 'darlean',
-  'halyk_logo.png': 'halyk',
-  'intebix_logo.png': 'intebix',
-  'biteeu_logo.png': 'biteeu',
-  'bcc_logo.png': 'bcc-business',
+  'revolut_logo.png': 'revolut',
+  'blocktrade_logo.png': 'blocktrade',
+  'wire_logo.png': 'wire',
   'stepshero_logo.webp': 'stepshero',
   'capslab_logo.webp': 'capslab',
 };
@@ -89,9 +96,26 @@ function writeVariants(src, outBase, height, scratch) {
 const naturalOrder = new Intl.Collator('en', { numeric: true, sensitivity: 'base' }).compare;
 
 function imagesIn(folder) {
+  const excluded = EXCLUDED_SCREENSHOTS[folder.split('/').pop()] ?? {};
   return readdirSync(folder)
     .filter((name) => !name.startsWith('.') && IMAGE_EXTENSIONS.has(extname(name).toLowerCase()))
+    .filter((name) => !(name in excluded))
     .sort(naturalOrder);
+}
+
+// Check every mapped source before deleting anything, so a missing original
+// can't silently remove a published gallery or logo.
+const missing = [];
+for (const folder of Object.keys(SCREENSHOT_FOLDERS)) {
+  const path = join(screenshotsDir, folder);
+  if (!existsSync(path) || imagesIn(path).length === 0) missing.push(`Screenshots/${folder}/ (no images)`);
+}
+for (const file of Object.keys(LOGO_FILES)) {
+  if (!existsSync(join(logosDir, file))) missing.push(`Logos/${file}`);
+}
+if (missing.length) {
+  console.error(`Stopped before changing anything. Missing originals:\n  ${missing.join('\n  ')}`);
+  process.exit(1);
 }
 
 const manifest = { screenshots: {}, logos: {} };
@@ -105,6 +129,13 @@ for (const folder of readdirSync(screenshotsDir).sort(naturalOrder)) {
   if (folder.includes('_raw')) {
     console.log(`skip   Screenshots/${folder}/ (raw source, not published)`);
     continue;
+  }
+  if (RETIRED_SCREENSHOT_FOLDERS.has(folder)) {
+    console.log(`skip   Screenshots/${folder}/ (retired project, not published)`);
+    continue;
+  }
+  for (const [file, reason] of Object.entries(EXCLUDED_SCREENSHOTS[folder] ?? {})) {
+    console.log(`skip   Screenshots/${folder}/${file} (${reason})`);
   }
   const slug = SCREENSHOT_FOLDERS[folder];
   if (!slug) {
@@ -153,3 +184,8 @@ for (const [file, slug] of Object.entries(LOGO_FILES)) {
 rmSync(scratch, { recursive: true, force: true });
 writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 console.log(`\nWrote ${relative(root, manifestPath)}`);
+
+// Output folders this script no longer writes are left alone; delete them on purpose if unused.
+const mappedSlugs = new Set(Object.values(SCREENSHOT_FOLDERS));
+const stale = existsSync(publicShots) ? readdirSync(publicShots).filter((name) => !name.startsWith('.') && !mappedSlugs.has(name)) : [];
+if (stale.length) console.log(`Not managed by this script any more: public/screenshots/{${stale.join(',')}}`);

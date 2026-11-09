@@ -1,4 +1,5 @@
 import { portfolio } from '../content/portfolio';
+import { externalLink } from '../lib/links';
 import './Footer.css';
 
 export function Footer() {
@@ -11,7 +12,7 @@ export function Footer() {
           © {new Date().getFullYear()} {profile.name}
         </span>
         <div className="site-footer__links">
-          <a className="text-link site-footer__link" href={contact.appStoreDeveloper.href}>
+          <a className="text-link site-footer__link" href={contact.appStoreDeveloper.href} {...externalLink}>
             {contact.appStoreDeveloper.label}
           </a>
           <a className="text-link site-footer__link only-desktop" href="#top">

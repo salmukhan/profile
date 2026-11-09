@@ -1,4 +1,5 @@
 import { portfolio } from '../content/portfolio';
+import { externalLink } from '../lib/links';
 import { ProjectCard } from './ProjectCard';
 import './Projects.css';
 
@@ -18,7 +19,7 @@ export function Projects() {
               {group.introLink && (
                 <>
                   {' '}
-                  <a className="text-link project-group__link" href={group.introLink.href}>
+                  <a className="text-link project-group__link" href={group.introLink.href} {...externalLink}>
                     {group.introLink.label}
                   </a>
                 </>

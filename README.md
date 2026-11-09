@@ -24,12 +24,14 @@ Open http://localhost:4173.
 
 All text, links and media are in [`src/content/portfolio.ts`](src/content/portfolio.ts). The components only read from it, so you don't need to touch them to update the site.
 
-- **Projects:** each entry under `projects` has a name, a subtitle (company or App Store category), a description, a logo, screenshots and an App Store action. The order in the file is the order on the page.
+- **Projects:** each entry under `projects` has a name, a subtitle (company or App Store category), a description, a logo, screenshots and an optional button. The order in the file is the order on the page.
 - **Stack line:** `stack: { label, items }` lists only technologies a source attributes to that app. Leave it out when none do.
 - **Solo badge:** `solo: true` shows the "Solo iOS Developer" badge. Its text is in `soloBadge`.
-- **App Store button:** `{ kind: 'link', href, ariaLabel }` opens a listing. `{ kind: 'notice', title, message }` opens an informational dialog instead (used for Fergus).
+- **Card button:** `store: { kind: 'link', href, ariaLabel }` opens an App Store listing; add `label` for another kind of page (Blocktrade uses `label: 'Case study'`). `{ kind: 'notice', title, message }` opens an informational dialog instead (used for Fergus). Leave `store` out when there is no working public page. External links open in a new tab.
+- **Gallery note:** `screenshotsNote` adds a short line under the gallery saying where the images come from.
 - **Experience:** dates are `start` and `end` months as `'YYYY-MM'` (leave out `end` for the current role). The page shows them as "Aug 2023 – Sep 2025" and calculates the duration. Every achievement in `achievements` is shown. `apps` links to project cards by their `id`.
-- **CV and photo:** replace `public/Sultan_Almukhan_iOS_Developer.pdf` or `public/sultan-almukhan.jpg`, or point `cv.file` and `profile.photo` at new files in `public/`.
+- **CV and photo:** replace `public/Sultan_Almukhan_iOS_Engineer.pdf` or `public/sultan-almukhan.jpg`, or point `cv.file` and `profile.photo` at new files in `public/`.
+- **Contact:** `contact.location` is shown as plain text in the Contact list.
 
 ### Logos and screenshots
 
@@ -46,6 +48,15 @@ This runs `scripts/optimize-images.mjs` (macOS only, it uses the built-in `sips`
 - their sizes to `src/content/media.generated.json`, which `portfolio.ts` reads through `screenshotsFor('<app>')` and `logoFor('<app>')`.
 
 Screenshots are shown in file-name order (`1.png`, `2.png`, … `10.png`). To add an app or a folder, map it in `SCREENSHOT_FOLDERS` or `LOGO_FILES` at the top of the script, run `npm run images`, and use the same slug in `portfolio.ts`. A project with no screenshots shows no gallery; one without a logo shows its title alone.
+
+Also at the top of the script:
+
+- `RETIRED_SCREENSHOT_FOLDERS` lists folders of projects no longer on the site; their originals are kept but skipped.
+- `EXCLUDED_SCREENSHOTS` keeps individual originals off the site, with the reason (Fergus #3 and #4).
+
+Before deleting anything, the script checks that every mapped folder and logo exists, and stops if one is missing. It rebuilds `public/logos/` and each mapped `public/screenshots/<app>/` folder; folders of slugs it no longer maps are listed but left for you to delete.
+
+Where third-party screenshots and logos come from (Revolut, Wire, Blocktrade) is recorded in [`ASSET_SOURCES.md`](ASSET_SOURCES.md).
 
 ## Deploying to GitHub Pages
 

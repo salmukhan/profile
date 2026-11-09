@@ -132,6 +132,14 @@
   margin-top: 20px;
 }
 
+/* Where the gallery images come from, e.g. current App Store screenshots. */
+.card__shots-note {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
 .card__stack {
   margin: 14px 0 0;
   font-size: 14px;

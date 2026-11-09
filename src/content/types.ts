@@ -22,11 +22,12 @@ export interface Screenshot {
 }
 
 /**
- * What the card's "App Store" button does: open a public listing, or show an
+ * What the card's button does: open a public page (an App Store listing by
+ * default, or another page with its own `label`, e.g. "Case study"), or show an
  * informational dialog for apps without one (internal enterprise apps).
  */
 export type StoreAction =
-  | { kind: 'link'; href: string; ariaLabel: string }
+  | { kind: 'link'; href: string; ariaLabel: string; /** Button text. Defaults to "App Store". */ label?: string }
   | { kind: 'notice'; title: string; message: string };
 
 export interface Project {
@@ -49,7 +50,10 @@ export interface Project {
   solo?: boolean;
   /** Any number of screenshots. With none, the card shows no gallery. */
   screenshots: Screenshot[];
-  store: StoreAction;
+  /** Short note under the gallery saying where the images come from, e.g. "Current App Store screenshots." */
+  screenshotsNote?: string;
+  /** The card's button. Leave out when there is no working public page. */
+  store?: StoreAction;
 }
 
 export interface ProjectGroup {
@@ -90,6 +94,8 @@ export interface Portfolio {
   };
   contact: {
     intro: string;
+    /** Shown as plain text in the Contact list. */
+    location: string;
     email: string;
     linkedin: LabeledLink;
     github: LabeledLink;

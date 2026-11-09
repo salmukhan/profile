@@ -1,15 +1,17 @@
 import { portfolio } from '../content/portfolio';
+import { externalLink } from '../lib/links';
 import { CvLink } from './CvLink';
 import { MailIcon } from './Icons';
 import './Contact.css';
 
 export function Contact() {
   const { contact } = portfolio;
-  const rows = [
+  const rows: { term: string; label: string; href?: string; external?: boolean }[] = [
+    { term: 'Location', label: contact.location },
     { term: 'Email', href: `mailto:${contact.email}`, label: contact.email },
-    { term: 'LinkedIn', ...contact.linkedin },
-    { term: 'GitHub', ...contact.github },
-    { term: 'WhatsApp', ...contact.whatsapp },
+    { term: 'LinkedIn', ...contact.linkedin, external: true },
+    { term: 'GitHub', ...contact.github, external: true },
+    { term: 'WhatsApp', ...contact.whatsapp, external: true },
   ];
 
   return (
@@ -35,9 +37,13 @@ export function Contact() {
             <div key={row.term} className="contact__row">
               <dt>{row.term}</dt>
               <dd>
-                <a className="text-link contact__link" href={row.href}>
-                  {row.label}
-                </a>
+                {row.href ? (
+                  <a className="text-link contact__link" href={row.href} {...(row.external ? externalLink : {})}>
+                    {row.label}
+                  </a>
+                ) : (
+                  <span className="contact__text-value">{row.label}</span>
+                )}
               </dd>
             </div>
           ))}

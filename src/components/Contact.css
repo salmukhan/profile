@@ -60,7 +60,8 @@
 }
 
 .contact__link,
-.contact__link:hover {
+.contact__link:hover,
+.contact__text-value {
   color: var(--text-strong);
 }
 
@@ -100,7 +101,8 @@
     font-size: 13.5px;
   }
 
-  .contact__link {
+  .contact__link,
+  .contact__text-value {
     display: inline-flex;
     align-items: center;
     min-height: 36px;

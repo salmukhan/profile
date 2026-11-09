@@ -1,94 +1,20 @@
 {
   "screenshots": {
-    "bcc-business": [
+    "blocktrade": [
       {
-        "thumb": "screenshots/bcc-business/01-thumb",
-        "full": "screenshots/bcc-business/01-full",
-        "width": 900,
+        "thumb": "screenshots/blocktrade/01-thumb",
+        "full": "screenshots/blocktrade/01-full",
+        "width": 2844,
         "height": 1600,
-        "thumbWidth": 270,
+        "thumbWidth": 853,
         "thumbHeight": 480
       },
       {
-        "thumb": "screenshots/bcc-business/02-thumb",
-        "full": "screenshots/bcc-business/02-full",
-        "width": 900,
+        "thumb": "screenshots/blocktrade/02-thumb",
+        "full": "screenshots/blocktrade/02-full",
+        "width": 2560,
         "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/bcc-business/03-thumb",
-        "full": "screenshots/bcc-business/03-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/bcc-business/04-thumb",
-        "full": "screenshots/bcc-business/04-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/bcc-business/05-thumb",
-        "full": "screenshots/bcc-business/05-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/bcc-business/06-thumb",
-        "full": "screenshots/bcc-business/06-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/bcc-business/07-thumb",
-        "full": "screenshots/bcc-business/07-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      }
-    ],
-    "biteeu": [
-      {
-        "thumb": "screenshots/biteeu/01-thumb",
-        "full": "screenshots/biteeu/01-full",
-        "width": 885,
-        "height": 1600,
-        "thumbWidth": 265,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/biteeu/02-thumb",
-        "full": "screenshots/biteeu/02-full",
-        "width": 885,
-        "height": 1600,
-        "thumbWidth": 265,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/biteeu/03-thumb",
-        "full": "screenshots/biteeu/03-full",
-        "width": 885,
-        "height": 1600,
-        "thumbWidth": 265,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/biteeu/04-thumb",
-        "full": "screenshots/biteeu/04-full",
-        "width": 885,
-        "height": 1600,
-        "thumbWidth": 265,
+        "thumbWidth": 768,
         "thumbHeight": 480
       }
     ],
@@ -192,40 +118,6 @@
         "thumbHeight": 480
       }
     ],
-    "darlean": [
-      {
-        "thumb": "screenshots/darlean/01-thumb",
-        "full": "screenshots/darlean/01-full",
-        "width": 459,
-        "height": 998,
-        "thumbWidth": 220,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/darlean/02-thumb",
-        "full": "screenshots/darlean/02-full",
-        "width": 459,
-        "height": 998,
-        "thumbWidth": 220,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/darlean/03-thumb",
-        "full": "screenshots/darlean/03-full",
-        "width": 459,
-        "height": 998,
-        "thumbWidth": 220,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/darlean/04-thumb",
-        "full": "screenshots/darlean/04-full",
-        "width": 459,
-        "height": 998,
-        "thumbWidth": 220,
-        "thumbHeight": 480
-      }
-    ],
     "fergus": [
       {
         "thumb": "screenshots/fergus/01-thumb",
@@ -266,121 +158,47 @@
         "height": 1600,
         "thumbWidth": 270,
         "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/fergus/06-thumb",
-        "full": "screenshots/fergus/06-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/fergus/07-thumb",
-        "full": "screenshots/fergus/07-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
       }
     ],
-    "halyk": [
+    "revolut": [
       {
-        "thumb": "screenshots/halyk/01-thumb",
-        "full": "screenshots/halyk/01-full",
-        "width": 900,
+        "thumb": "screenshots/revolut/01-thumb",
+        "full": "screenshots/revolut/01-full",
+        "width": 736,
         "height": 1600,
-        "thumbWidth": 270,
+        "thumbWidth": 220,
         "thumbHeight": 480
       },
       {
-        "thumb": "screenshots/halyk/02-thumb",
-        "full": "screenshots/halyk/02-full",
-        "width": 900,
+        "thumb": "screenshots/revolut/02-thumb",
+        "full": "screenshots/revolut/02-full",
+        "width": 736,
         "height": 1600,
-        "thumbWidth": 270,
+        "thumbWidth": 220,
         "thumbHeight": 480
       },
       {
-        "thumb": "screenshots/halyk/03-thumb",
-        "full": "screenshots/halyk/03-full",
-        "width": 900,
+        "thumb": "screenshots/revolut/03-thumb",
+        "full": "screenshots/revolut/03-full",
+        "width": 736,
         "height": 1600,
-        "thumbWidth": 270,
+        "thumbWidth": 220,
         "thumbHeight": 480
       },
       {
-        "thumb": "screenshots/halyk/04-thumb",
-        "full": "screenshots/halyk/04-full",
-        "width": 900,
+        "thumb": "screenshots/revolut/04-thumb",
+        "full": "screenshots/revolut/04-full",
+        "width": 736,
         "height": 1600,
-        "thumbWidth": 270,
+        "thumbWidth": 220,
         "thumbHeight": 480
       },
       {
-        "thumb": "screenshots/halyk/05-thumb",
-        "full": "screenshots/halyk/05-full",
-        "width": 900,
+        "thumb": "screenshots/revolut/05-thumb",
+        "full": "screenshots/revolut/05-full",
+        "width": 736,
         "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/halyk/06-thumb",
-        "full": "screenshots/halyk/06-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/halyk/07-thumb",
-        "full": "screenshots/halyk/07-full",
-        "width": 900,
-        "height": 1600,
-        "thumbWidth": 270,
-        "thumbHeight": 480
-      }
-    ],
-    "intebix": [
-      {
-        "thumb": "screenshots/intebix/01-thumb",
-        "full": "screenshots/intebix/01-full",
-        "width": 460,
-        "height": 996,
-        "thumbWidth": 221,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/intebix/02-thumb",
-        "full": "screenshots/intebix/02-full",
-        "width": 460,
-        "height": 996,
-        "thumbWidth": 221,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/intebix/03-thumb",
-        "full": "screenshots/intebix/03-full",
-        "width": 460,
-        "height": 996,
-        "thumbWidth": 221,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/intebix/04-thumb",
-        "full": "screenshots/intebix/04-full",
-        "width": 460,
-        "height": 996,
-        "thumbWidth": 221,
-        "thumbHeight": 480
-      },
-      {
-        "thumb": "screenshots/intebix/05-thumb",
-        "full": "screenshots/intebix/05-full",
-        "width": 460,
-        "height": 996,
-        "thumbWidth": 221,
+        "thumbWidth": 220,
         "thumbHeight": 480
       }
     ],
@@ -507,17 +325,49 @@
         "thumbWidth": 221,
         "thumbHeight": 480
       }
+    ],
+    "wire": [
+      {
+        "thumb": "screenshots/wire/01-thumb",
+        "full": "screenshots/wire/01-full",
+        "width": 739,
+        "height": 1600,
+        "thumbWidth": 221,
+        "thumbHeight": 480
+      },
+      {
+        "thumb": "screenshots/wire/02-thumb",
+        "full": "screenshots/wire/02-full",
+        "width": 739,
+        "height": 1600,
+        "thumbWidth": 221,
+        "thumbHeight": 480
+      },
+      {
+        "thumb": "screenshots/wire/03-thumb",
+        "full": "screenshots/wire/03-full",
+        "width": 739,
+        "height": 1600,
+        "thumbWidth": 221,
+        "thumbHeight": 480
+      },
+      {
+        "thumb": "screenshots/wire/04-thumb",
+        "full": "screenshots/wire/04-full",
+        "width": 739,
+        "height": 1600,
+        "thumbWidth": 221,
+        "thumbHeight": 480
+      }
     ]
   },
   "logos": {
     "fergus": "logos/fergus.png",
     "mitt-tele2": "logos/mitt-tele2.png",
     "comviq": "logos/comviq.png",
-    "darlean": "logos/darlean.png",
-    "halyk": "logos/halyk.png",
-    "intebix": "logos/intebix.png",
-    "biteeu": "logos/biteeu.png",
-    "bcc-business": "logos/bcc-business.png",
+    "revolut": "logos/revolut.png",
+    "blocktrade": "logos/blocktrade.png",
+    "wire": "logos/wire.png",
     "stepshero": "logos/stepshero.png",
     "capslab": "logos/capslab.png"
   }

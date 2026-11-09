@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { portfolio } from '../content/portfolio';
 import type { Project } from '../content/types';
 import { asset } from '../lib/asset';
+import { externalLink } from '../lib/links';
 import { ExternalIcon, LockIcon, StarIcon } from './Icons';
 import { InfoDialog } from './InfoDialog';
 import type { InfoDialogHandle } from './InfoDialog';
@@ -41,6 +42,7 @@ export function ProjectCard({ project }: { project: Project }) {
       {project.screenshots.length > 0 && (
         <div className="card__shots">
           <ScreenshotGallery appName={project.shortName ?? project.name} screenshots={project.screenshots} />
+          {project.screenshotsNote && <p className="card__shots-note">{project.screenshotsNote}</p>}
         </div>
       )}
 
@@ -50,29 +52,31 @@ export function ProjectCard({ project }: { project: Project }) {
         </p>
       )}
 
-      <div className="card__action">
-        {store.kind === 'link' ? (
-          <a className="btn btn--secondary card__store" href={store.href} aria-label={store.ariaLabel}>
-            App Store
-            <ExternalIcon />
-          </a>
-        ) : (
-          <>
-            <button
-              type="button"
-              className="btn btn--secondary card__store"
-              aria-haspopup="dialog"
-              onClick={(event) => noticeRef.current?.open(event.currentTarget)}
-            >
-              <LockIcon />
-              App Store
-            </button>
-            <InfoDialog ref={noticeRef} title={store.title} icon={<LockIcon size={20} />}>
-              {store.message}
-            </InfoDialog>
-          </>
-        )}
-      </div>
+      {store && (
+        <div className="card__action">
+          {store.kind === 'link' ? (
+            <a className="btn btn--secondary card__store" href={store.href} aria-label={store.ariaLabel} {...externalLink}>
+              {store.label ?? 'App Store'}
+              <ExternalIcon />
+            </a>
+          ) : (
+            <>
+              <button
+                type="button"
+                className="btn btn--secondary card__store"
+                aria-haspopup="dialog"
+                onClick={(event) => noticeRef.current?.open(event.currentTarget)}
+              >
+                <LockIcon />
+                App Store
+              </button>
+              <InfoDialog ref={noticeRef} title={store.title} icon={<LockIcon size={20} />}>
+                {store.message}
+              </InfoDialog>
+            </>
+          )}
+        </div>
+      )}
     </article>
   );
 }
